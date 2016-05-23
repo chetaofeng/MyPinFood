@@ -12,6 +12,7 @@
 		CBF5CE201CF0B5B3009BBE4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE1E1CF0B5B3009BBE4F /* Main.storyboard */; };
 		CBF5CE221CF0B5B3009BBE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE211CF0B5B3009BBE4F /* Assets.xcassets */; };
 		CBF5CE251CF0B5B3009BBE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE231CF0B5B3009BBE4F /* LaunchScreen.storyboard */; };
+		CBF5CE2D1CF35C33009BBE4F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE2C1CF35C33009BBE4F /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CBF5CE211CF0B5B3009BBE4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBF5CE241CF0B5B3009BBE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBF5CE261CF0B5B3009BBE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF5CE2C1CF35C33009BBE4F /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				CBF5CE211CF0B5B3009BBE4F /* Assets.xcassets */,
 				CBF5CE231CF0B5B3009BBE4F /* LaunchScreen.storyboard */,
 				CBF5CE261CF0B5B3009BBE4F /* Info.plist */,
+				CBF5CE2C1CF35C33009BBE4F /* Login.storyboard */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF5CE2D1CF35C33009BBE4F /* Login.storyboard in Resources */,
 				CBF5CE251CF0B5B3009BBE4F /* LaunchScreen.storyboard in Resources */,
 				CBF5CE221CF0B5B3009BBE4F /* Assets.xcassets in Resources */,
 				CBF5CE201CF0B5B3009BBE4F /* Main.storyboard in Resources */,
@@ -289,6 +293,7 @@
 				CBF5CE2B1CF0B5B3009BBE4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
