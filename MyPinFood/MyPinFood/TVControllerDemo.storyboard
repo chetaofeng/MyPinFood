@@ -62,7 +62,7 @@
                                     <outlet property="resturantName" destination="AoU-Zx-Vas" id="9mQ-Lq-Jda"/>
                                     <outlet property="resturantPlace" destination="3EV-gj-yDL" id="Hvv-2W-5nX"/>
                                     <outlet property="resturantType" destination="7QR-qF-ZdN" id="xOm-Kn-Q2T"/>
-                                    <segue destination="FWb-m7-Cll" kind="show" id="5uh-ii-hVO"/>
+                                    <segue destination="FWb-m7-Cll" kind="show" identifier="showResturantDetail" id="5uh-ii-hVO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1272" y="333"/>
         </scene>
-        <!--View Controller-->
+        <!--Resturant Detal View Controller-->
         <scene sceneID="aO0-Xn-Klb">
             <objects>
-                <viewController id="FWb-m7-Cll" sceneMemberID="viewController">
+                <viewController id="FWb-m7-Cll" customClass="ResturantDetalViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dxw-N9-P2Z"/>
                         <viewControllerLayoutGuide type="bottom" id="OE7-wO-tPZ"/>
@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vqv-nL-AKF">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,6 +103,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="detailResutrantImage" destination="Vqv-nL-AKF" id="D4e-1X-Pep"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WU4-7W-whS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

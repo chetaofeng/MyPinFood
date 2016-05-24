@@ -18,6 +18,7 @@
 		CBF5CE331CF43601009BBE4F /* TVControllerDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */; };
 		CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */; };
 		CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */; };
+		CBF5CE391CF4B42D009BBE4F /* ResturantDetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE381CF4B42D009BBE4F /* ResturantDetalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TVControllerDemo.storyboard; sourceTree = "<group>"; };
 		CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantTVController.swift; sourceTree = "<group>"; };
 		CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		CBF5CE381CF4B42D009BBE4F /* ResturantDetalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantDetalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */,
 				CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */,
 				CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */,
+				CBF5CE381CF4B42D009BBE4F /* ResturantDetalViewController.swift */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			files = (
 				CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */,
 				CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */,
+				CBF5CE391CF4B42D009BBE4F /* ResturantDetalViewController.swift in Sources */,
 				CBF5CE1D1CF0B5B3009BBE4F /* ViewController.swift in Sources */,
 				CBF5CE311CF42596009BBE4F /* TableViewDemoController.swift in Sources */,
 				CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */,

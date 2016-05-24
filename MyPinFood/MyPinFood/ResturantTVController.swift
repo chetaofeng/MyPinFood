@@ -117,16 +117,15 @@ class ResturantTVController: UITableViewController {
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-
+     */
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showResturantDetail"{
+            let destVC = segue.destinationViewController as! ResturantDetalViewController
+            destVC.resturantImageName = resturantsImages[(tableView.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
+ 
     
     /*
     //选中行后的事件
