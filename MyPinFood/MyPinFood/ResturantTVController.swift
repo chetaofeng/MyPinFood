@@ -9,14 +9,14 @@
 import UIKit
 
 class ResturantTVController: UITableViewController {
-    let resturants = ["咖啡胡同", "霍米", "茶.家", "洛伊斯咖啡", "贝蒂生蚝", "福奇餐馆", "阿波画室", "伯克街面包坊", "黑氏巧克力", "惠灵顿雪梨", "北州", "布鲁克林塔菲", "格雷厄姆大街肉", "华夫饼 & 沃夫", "五叶", "眼光咖啡", "忏悔", "巴拉菲娜", "多尼西亚", "皇家橡树", "泰咖啡"]
+    var resturants = ["咖啡胡同", "霍米", "茶.家", "洛伊斯咖啡", "贝蒂生蚝", "福奇餐馆", "阿波画室", "伯克街面包坊", "黑氏巧克力", "惠灵顿雪梨", "北州", "布鲁克林塔菲", "格雷厄姆大街肉", "华夫饼 & 沃夫", "五叶", "眼光咖啡", "忏悔", "巴拉菲娜", "多尼西亚", "皇家橡树", "泰咖啡"]
     
-    let resturantsImages =
+    var resturantsImages =
         ["cafedeadend.jpg", "homei.jpg", "teakha.jpg", "cafeloisl.jpg", "petiteoyster.jpg", "forkeerestaurant.jpg", "posatelier.jpg", "bourkestreetbakery.jpg", "haighschocolate.jpg", "palominoespresso.jpg", "upstate.jpg", "traif.jpg", "grahamavenuemeats.jpg", "wafflewolf.jpg", "fiveleaves.jpg", "cafelore.jpg", "confessional.jpg", "barrafina.jpg", "donostia.jpg", "royaloak.jpg", "thaicafe.jpg"]
     
-    let resturantsPlace = ["香港", "香港", "香港", "香港", "香港", "香港", "香港", "悉尼", "悉尼", "悉尼", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "伦敦", "伦敦", "伦敦", "伦敦"]
+    var resturantsPlace = ["香港", "香港", "香港", "香港", "香港", "香港", "香港", "悉尼", "悉尼", "悉尼", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "伦敦", "伦敦", "伦敦", "伦敦"]
     
-    let resturantsType = ["咖啡 & 茶店","咖啡", "茶屋", "奥地利式 & 休闲饮料","法式", "面包房", "面包房", "巧克力", "咖啡", "美式 & 海鲜", "美式", "美式","早餐 & 早午餐", "法式 & 茶", "咖啡 & 茶", "拉丁美式", "西班牙式", "西班牙式", "西班牙式", "英式", "泰式"]
+    var resturantsType = ["咖啡 & 茶店","咖啡", "茶屋", "奥地利式 & 休闲饮料","法式", "面包房", "面包房", "巧克力", "咖啡", "美式 & 海鲜", "美式", "美式","早餐 & 早午餐", "法式 & 茶", "咖啡 & 茶", "拉丁美式", "西班牙式", "西班牙式", "西班牙式", "英式", "泰式"]
     
     var hasVisitedFlag = [Bool](count:21,repeatedValue:true)
 
@@ -67,12 +67,46 @@ class ResturantTVController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            resturants.removeAtIndex(indexPath.row)
+            resturantsType.removeAtIndex(indexPath.row)
+            resturantsPlace.removeAtIndex(indexPath.row)
+            resturantsImages.removeAtIndex(indexPath.row)
+            hasVisitedFlag.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //删除一行，同时有动画效果
+//            tableView.reloadData() //刷新表格,刷新整个表格，不推荐
         } else if editingStyle == .Insert {
         
         }
     }
 
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let doShare = UITableViewRowAction(style: .Default, title: "分享") { (action, indexPath) in
+            let alertController = UIAlertController(title: "分享到", message: "请选择要分享到...", preferredStyle: .ActionSheet)
+            let qqAction = UIAlertAction(title: "QQ", style: .Default, handler: nil)
+            let sinaAction = UIAlertAction(title: "新浪", style: .Default, handler: nil)
+            let wxAction = UIAlertAction(title: "微信", style: .Default, handler: nil)
+            
+            alertController.addAction(qqAction)
+            alertController.addAction(sinaAction)
+            alertController.addAction(wxAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        doShare.backgroundColor = UIColor.greenColor()
+
+        let doDelete = UITableViewRowAction(style: .Default, title: "删除") { (action, indexPath) in
+            self.resturants.removeAtIndex(indexPath.row)
+            self.resturantsType.removeAtIndex(indexPath.row)
+            self.resturantsPlace.removeAtIndex(indexPath.row)
+            self.resturantsImages.removeAtIndex(indexPath.row)
+            self.hasVisitedFlag.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //删除一行，同时有动画效果
+        }
+
+        return [doShare,doDelete]
+    }
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
