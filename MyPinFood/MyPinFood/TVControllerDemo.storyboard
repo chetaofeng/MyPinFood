@@ -42,9 +42,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fxJ-R5-cBX">
+                                            <rect key="frame" x="520" y="15" width="40" height="40"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="hasVisitedImg" destination="fxJ-R5-cBX" id="waQ-UV-zea"/>
                                     <outlet property="resturantImg" destination="f0m-iR-Jwg" id="lKV-tn-C4F"/>
                                     <outlet property="resturantName" destination="AoU-Zx-Vas" id="9mQ-Lq-Jda"/>
                                     <outlet property="resturantPlace" destination="3EV-gj-yDL" id="Hvv-2W-5nX"/>

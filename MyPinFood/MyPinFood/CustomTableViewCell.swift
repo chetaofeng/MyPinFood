@@ -14,6 +14,7 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var resturantName: UILabel!
     @IBOutlet weak var resturantPlace: UILabel!
     @IBOutlet weak var resturantType: UILabel!
+    @IBOutlet weak var hasVisitedImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +22,6 @@ class CustomTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
 
 }

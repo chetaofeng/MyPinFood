@@ -17,6 +17,8 @@ class ResturantTVController: UITableViewController {
     let resturantsPlace = ["香港", "香港", "香港", "香港", "香港", "香港", "香港", "悉尼", "悉尼", "悉尼", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "伦敦", "伦敦", "伦敦", "伦敦"]
     
     let resturantsType = ["咖啡 & 茶店","咖啡", "茶屋", "奥地利式 & 休闲饮料","法式", "面包房", "面包房", "巧克力", "咖啡", "美式 & 海鲜", "美式", "美式","早餐 & 早午餐", "法式 & 茶", "咖啡 & 茶", "拉丁美式", "西班牙式", "西班牙式", "西班牙式", "英式", "泰式"]
+    
+    var hasVisitedFlag = [Bool](count:21,repeatedValue:true)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,11 @@ class ResturantTVController: UITableViewController {
         cell.resturantName.text = resturants[indexPath.row]
         cell.resturantPlace.text = resturantsPlace[indexPath.row]
         cell.resturantType.text = resturantsType[indexPath.row]
- 
+//        cell.accessoryType = hasVisitedFlag[indexPath.row] ? .Checkmark: .None
+        
+        cell.hasVisitedImg.image = UIImage(named: "heart")
+        cell.hasVisitedImg.hidden = hasVisitedFlag[indexPath.row]
+        
         //设置图片的圆角效果
         cell.resturantImg.layer.cornerRadius = cell.resturantImg.frame.size.width / 2
         cell.resturantImg.clipsToBounds = true  //让圆角设置效果生效
@@ -94,6 +100,32 @@ class ResturantTVController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //选中行后的事件
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let alertController = UIAlertController(title: "你选择了本餐厅", message: "提示", preferredStyle:.ActionSheet)
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel,handler: nil)
+        
+        let doDial = {(action:UIAlertAction) -> Void in
+            let alert = UIAlertController(title: "提示", message: "您所拨打的号码暂时无法接通！", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "确定", style: .Default, handler: nil)
+            alert.addAction(okAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        let dialAction = UIAlertAction(title: "拨打 0931-852960\(indexPath.row)", style: .Default,handler: doDial)
+        
+        let hasVisitedAction = UIAlertAction(title: "我来过", style: .Default) { (_) in
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! CustomTableViewCell
+//            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.hasVisitedImg.hidden = false
+            self.hasVisitedFlag[indexPath.row] = true
+        }
+     
+        alertController.addAction(cancelAction)
+        alertController.addAction(dialAction)
+        alertController.addAction(hasVisitedAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
 
     override func prefersStatusBarHidden() -> Bool {
         return true
