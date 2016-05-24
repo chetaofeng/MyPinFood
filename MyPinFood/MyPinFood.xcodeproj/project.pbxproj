@@ -13,6 +13,11 @@
 		CBF5CE221CF0B5B3009BBE4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE211CF0B5B3009BBE4F /* Assets.xcassets */; };
 		CBF5CE251CF0B5B3009BBE4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE231CF0B5B3009BBE4F /* LaunchScreen.storyboard */; };
 		CBF5CE2D1CF35C33009BBE4F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE2C1CF35C33009BBE4F /* Login.storyboard */; };
+		CBF5CE2F1CF423EA009BBE4F /* TableViewDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE2E1CF423EA009BBE4F /* TableViewDemo.storyboard */; };
+		CBF5CE311CF42596009BBE4F /* TableViewDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE301CF42596009BBE4F /* TableViewDemoController.swift */; };
+		CBF5CE331CF43601009BBE4F /* TVControllerDemo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */; };
+		CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */; };
+		CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		CBF5CE241CF0B5B3009BBE4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBF5CE261CF0B5B3009BBE4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBF5CE2C1CF35C33009BBE4F /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CBF5CE2E1CF423EA009BBE4F /* TableViewDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TableViewDemo.storyboard; sourceTree = "<group>"; };
+		CBF5CE301CF42596009BBE4F /* TableViewDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDemoController.swift; sourceTree = "<group>"; };
+		CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TVControllerDemo.storyboard; sourceTree = "<group>"; };
+		CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantTVController.swift; sourceTree = "<group>"; };
+		CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				CBF5CE231CF0B5B3009BBE4F /* LaunchScreen.storyboard */,
 				CBF5CE261CF0B5B3009BBE4F /* Info.plist */,
 				CBF5CE2C1CF35C33009BBE4F /* Login.storyboard */,
+				CBF5CE2E1CF423EA009BBE4F /* TableViewDemo.storyboard */,
+				CBF5CE301CF42596009BBE4F /* TableViewDemoController.swift */,
+				CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */,
+				CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */,
+				CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -127,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF5CE2D1CF35C33009BBE4F /* Login.storyboard in Resources */,
+				CBF5CE2F1CF423EA009BBE4F /* TableViewDemo.storyboard in Resources */,
 				CBF5CE251CF0B5B3009BBE4F /* LaunchScreen.storyboard in Resources */,
+				CBF5CE331CF43601009BBE4F /* TVControllerDemo.storyboard in Resources */,
 				CBF5CE221CF0B5B3009BBE4F /* Assets.xcassets in Resources */,
 				CBF5CE201CF0B5B3009BBE4F /* Main.storyboard in Resources */,
 			);
@@ -140,7 +157,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */,
+				CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */,
 				CBF5CE1D1CF0B5B3009BBE4F /* ViewController.swift in Sources */,
+				CBF5CE311CF42596009BBE4F /* TableViewDemoController.swift in Sources */,
 				CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
