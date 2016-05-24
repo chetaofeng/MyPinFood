@@ -112,17 +112,13 @@ class ResturantTVController: UITableViewController {
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
 
     }
-    */
+ 
 
-    /*
-    // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -132,6 +128,7 @@ class ResturantTVController: UITableViewController {
     }
     */
     
+    /*
     //选中行后的事件
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let alertController = UIAlertController(title: "你选择了本餐厅", message: "提示", preferredStyle:.ActionSheet)
@@ -157,8 +154,9 @@ class ResturantTVController: UITableViewController {
         alertController.addAction(hasVisitedAction)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+ */
 
     override func prefersStatusBarHidden() -> Bool {
-        return true
+        return false
     }
 }
