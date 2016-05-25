@@ -16,7 +16,13 @@ class ResturantDetailTVController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = resturantStruct.name    //设置视图标题
+        
         resturantImageView.image = UIImage(named: resturantStruct.image)
+        
+        tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)  //设置表格背景颜色
+        tableView.tableFooterView = UIView(frame:CGRectZero)        //移除空行
+        tableView.separatorColor  = UIColor(white: 0.9, alpha: 1)   //更改分割线的颜色
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +57,9 @@ class ResturantDetailTVController: UITableViewController {
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        
+        cell.backgroundColor = UIColor.clearColor() //设置单元格背景透明
+        
         return cell
     }
 
@@ -98,5 +107,9 @@ class ResturantDetailTVController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    //设置顶部状态条的颜色
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBar.barStyle = .Black
+    }
 
 }
