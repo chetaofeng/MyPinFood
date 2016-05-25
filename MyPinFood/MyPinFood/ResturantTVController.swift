@@ -129,6 +129,9 @@ class ResturantTVController: UITableViewController {
             let destVC = segue.destinationViewController as! ResturantDetalViewController
             destVC.resturantImageName = resturants[(tableView.indexPathForSelectedRow?.row)!].image
             destVC.resturantStruct = resturants[(tableView.indexPathForSelectedRow?.row)!]
+        }else if segue.identifier == "showNewResturantDetail"{
+            let destVC = segue.destinationViewController as! ResturantDetailTVController
+            destVC.resturantStruct = resturants[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
  

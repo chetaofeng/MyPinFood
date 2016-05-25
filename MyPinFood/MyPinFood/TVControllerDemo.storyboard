@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--我的吃货点评-->
@@ -62,7 +63,7 @@
                                     <outlet property="resturantName" destination="AoU-Zx-Vas" id="9mQ-Lq-Jda"/>
                                     <outlet property="resturantPlace" destination="3EV-gj-yDL" id="Hvv-2W-5nX"/>
                                     <outlet property="resturantType" destination="7QR-qF-ZdN" id="xOm-Kn-Q2T"/>
-                                    <segue destination="FWb-m7-Cll" kind="show" identifier="showResturantDetail" id="5uh-ii-hVO"/>
+                                    <segue destination="0ue-Ty-OgZ" kind="show" identifier="showNewResturantDetail" id="lXz-3r-bp1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +110,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WU4-7W-whS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654" y="347"/>
+            <point key="canvasLocation" x="1810" y="-9"/>
+        </scene>
+        <!--Resturant DetailTV Controller-->
+        <scene sceneID="GXM-xI-JQQ">
+            <objects>
+                <tableViewController id="0ue-Ty-OgZ" customClass="ResturantDetailTVController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VXl-rj-tFW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forkeerestaurant" id="2lM-CH-SKw">
+                            <rect key="frame" x="0.0" y="64" width="320" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="36" id="OpW-Fw-dIv" customClass="ResturantDetailTableViewCell" customModule="MyPinFood" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="392" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OpW-Fw-dIv" id="UEm-6h-x11">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="35.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdj-dH-gxJ">
+                                            <rect key="frame" x="8" y="6" width="304" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="261" verticalHuggingPriority="251" misplaced="YES" text="字段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-Ax-OPO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj4-zQ-h5t">
+                                                    <rect key="frame" x="102" y="0.0" width="203" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eSX-Ax-OPO" firstAttribute="width" secondItem="wj4-zQ-h5t" secondAttribute="width" multiplier="0.5" id="uis-kp-Rnz"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Gdj-dH-gxJ" secondAttribute="leading" id="Ldk-ZX-RDe"/>
+                                        <constraint firstItem="Gdj-dH-gxJ" firstAttribute="centerY" secondItem="UEm-6h-x11" secondAttribute="centerY" id="bfs-nD-KF1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Gdj-dH-gxJ" secondAttribute="trailing" id="kvH-MA-UPo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fieldLabel" destination="eSX-Ax-OPO" id="FTu-hO-bEP"/>
+                                    <outlet property="valueLabel" destination="wj4-zQ-h5t" id="VDf-Rg-3O3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0ue-Ty-OgZ" id="PZR-bZ-YgG"/>
+                            <outlet property="delegate" destination="0ue-Ty-OgZ" id="Ssk-XF-qfx"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="resturantImageView" destination="2lM-CH-SKw" id="a6S-w8-Cjj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5o4-QW-KtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810" y="691"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hnw-pC-Fup">
@@ -131,4 +198,7 @@
             <point key="canvasLocation" x="824" y="333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="forkeerestaurant" width="640" height="640"/>
+    </resources>
 </document>
