@@ -24,21 +24,23 @@ class ResturantReviewViewController: UIViewController {
         let scale = CGAffineTransformMakeScale(0, 0) //缩放
         let translate = CGAffineTransformMakeTranslation(0, 500)
         
-        stackView.transform = scale
-        stackView.transform = translate
+//        stackView.transform = scale
+//        stackView.transform = translate
+        
+        stackView.transform = CGAffineTransformConcat(scale, translate)
     }
     
     //界面显示的时候添加动画效果
     override func viewDidAppear(animated: Bool) {
-//        //在设置补帧效果
-//        UIView.animateWithDuration(1) {
-//            self.stackView.transform = CGAffineTransformIdentity //1s之后到尾帧
-//        }
+        //在设置补帧效果
+        UIView.animateWithDuration(1) {
+            self.stackView.transform = CGAffineTransformIdentity //1s之后到尾帧
+        }
         
-        //设置补帧效果二
-        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
-             self.stackView.transform = CGAffineTransformIdentity //1s之后到尾帧
-            }, completion: nil)
+//        //设置补帧效果二
+//        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: [], animations: {
+//             self.stackView.transform = CGAffineTransformIdentity //1s之后到尾帧
+//            }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
