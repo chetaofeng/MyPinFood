@@ -125,7 +125,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="forkeerestaurant" translatesAutoresizingMaskIntoConstraints="NO" id="2lM-CH-SKw">
-                                    <rect key="frame" x="0.0" y="0.0" width="640" height="640"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-7p-aKh">
                                     <rect key="frame" x="270" y="10" width="40" height="40"/>
