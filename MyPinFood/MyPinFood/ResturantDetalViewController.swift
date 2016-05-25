@@ -11,13 +11,15 @@ import UIKit
 class ResturantDetalViewController: UIViewController {
 
     var resturantImageName:String = ""
+    var resturantStruct:ResutrantStruct!
     
     @IBOutlet weak var detailResutrantImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detailResutrantImage.image = UIImage(named: resturantImageName)
+        print(resturantImageName)
+        detailResutrantImage.image = UIImage(named: resturantStruct.image)
     }
 
     override func didReceiveMemoryWarning() {
