@@ -14,5 +14,5 @@ var resturantsType = ["咖啡 & 茶店","咖啡", "茶屋", "奥地利式 & 休�
 var hasVisitedFlag = [Bool](count:21,repeatedValue:true)
 
 for i in 0..<resturants.count{
-    print("ResutrantStruct(name:\"\(resturants[i])\",type:\"\(resturantsType[i])\",location:\"\(resturantsPlace[i])\",image:\"\(resturantsImages[i])\",isHasVisited:\(hasVisitedFlag[i])),")
+    print("ResutrantStruct(name:\"\(resturants[i])\",type:\"\(resturantsType[i])\",location:\"\(resturantsPlace[i])\",image:\"\(resturantsImages[i])\",isHasVisited:\(hasVisitedFlag[i]),rating:\"\"),")
 }

@@ -16,6 +16,7 @@ struct ResutrantStruct {
     var location:String
     var image:String
     var isHasVisited:Bool
+    var rating:String = ""
 }
 
 class Resutrant {
@@ -24,12 +25,14 @@ class Resutrant {
     var location:String
     var image:String
     var isHasVisited:Bool
+    var rating:String = ""
     
-    init(name:String,type:String,location:String,image:String,isHasVisited:Bool){
+    init(name:String,type:String,location:String,image:String,isHasVisited:Bool,rating:String){
         self.name = name
         self.type = type
         self.location = location
         self.image = image
         self.isHasVisited = isHasVisited
+        self.rating = rating
     }
 }
