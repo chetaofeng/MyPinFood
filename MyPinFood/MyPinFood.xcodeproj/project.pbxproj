@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB3520A21CF576E200814577 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3520A11CF576E200814577 /* Resturant.swift */; };
 		CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */; };
 		CBF5CE1D1CF0B5B3009BBE4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE1C1CF0B5B3009BBE4F /* ViewController.swift */; };
 		CBF5CE201CF0B5B3009BBE4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF5CE1E1CF0B5B3009BBE4F /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB3520A11CF576E200814577 /* Resturant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
+		CB3520A31CF577D200814577 /* DataTrans.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataTrans.playground; sourceTree = "<group>"; };
 		CBF5CE171CF0B5B3009BBE4F /* MyPinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF5CE1C1CF0B5B3009BBE4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 				CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */,
 				CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */,
 				CBF5CE381CF4B42D009BBE4F /* ResturantDetalViewController.swift */,
+				CB3520A11CF576E200814577 /* Resturant.swift */,
+				CB3520A31CF577D200814577 /* DataTrans.playground */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */,
+				CB3520A21CF576E200814577 /* Resturant.swift in Sources */,
 				CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */,
 				CBF5CE391CF4B42D009BBE4F /* ResturantDetalViewController.swift in Sources */,
 				CBF5CE1D1CF0B5B3009BBE4F /* ViewController.swift in Sources */,

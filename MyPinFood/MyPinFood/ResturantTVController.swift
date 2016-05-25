@@ -9,17 +9,30 @@
 import UIKit
 
 class ResturantTVController: UITableViewController {
-    var resturants = ["咖啡胡同", "霍米", "茶.家", "洛伊斯咖啡", "贝蒂生蚝", "福奇餐馆", "阿波画室", "伯克街面包坊", "黑氏巧克力", "惠灵顿雪梨", "北州", "布鲁克林塔菲", "格雷厄姆大街肉", "华夫饼 & 沃夫", "五叶", "眼光咖啡", "忏悔", "巴拉菲娜", "多尼西亚", "皇家橡树", "泰咖啡"]
+    var resturants = [
+        ResutrantStruct(name:"咖啡胡同",type:"咖啡 & 茶店",location:"香港",image:"cafedeadend.jpg",isHasVisited:true),
+        ResutrantStruct(name:"霍米",type:"咖啡",location:"香港",image:"homei.jpg",isHasVisited:true),
+        ResutrantStruct(name:"茶.家",type:"茶屋",location:"香港",image:"teakha.jpg",isHasVisited:true),
+        ResutrantStruct(name:"洛伊斯咖啡",type:"奥地利式 & 休闲饮料",location:"香港",image:"cafeloisl.jpg",isHasVisited:true),
+        ResutrantStruct(name:"贝蒂生蚝",type:"法式",location:"香港",image:"petiteoyster.jpg",isHasVisited:true),
+        ResutrantStruct(name:"福奇餐馆",type:"面包房",location:"香港",image:"forkeerestaurant.jpg",isHasVisited:true),
+        ResutrantStruct(name:"阿波画室",type:"面包房",location:"香港",image:"posatelier.jpg",isHasVisited:true),
+        ResutrantStruct(name:"伯克街面包坊",type:"巧克力",location:"悉尼",image:"bourkestreetbakery.jpg",isHasVisited:true),
+        ResutrantStruct(name:"黑氏巧克力",type:"咖啡",location:"悉尼",image:"haighschocolate.jpg",isHasVisited:true),
+        ResutrantStruct(name:"惠灵顿雪梨",type:"美式 & 海鲜",location:"悉尼",image:"palominoespresso.jpg",isHasVisited:true),
+        ResutrantStruct(name:"北州",type:"美式",location:"纽约",image:"upstate.jpg",isHasVisited:true),
+        ResutrantStruct(name:"布鲁克林塔菲",type:"美式",location:"纽约",image:"traif.jpg",isHasVisited:true),
+        ResutrantStruct(name:"格雷厄姆大街肉",type:"早餐 & 早午餐",location:"纽约",image:"grahamavenuemeats.jpg",isHasVisited:true),
+        ResutrantStruct(name:"华夫饼 & 沃夫",type:"法式 & 茶",location:"纽约",image:"wafflewolf.jpg",isHasVisited:true),
+        ResutrantStruct(name:"五叶",type:"咖啡 & 茶",location:"纽约",image:"fiveleaves.jpg",isHasVisited:true),
+        ResutrantStruct(name:"眼光咖啡",type:"拉丁美式",location:"纽约",image:"cafelore.jpg",isHasVisited:true),
+        ResutrantStruct(name:"忏悔",type:"西班牙式",location:"纽约",image:"confessional.jpg",isHasVisited:true),
+        ResutrantStruct(name:"巴拉菲娜",type:"西班牙式",location:"伦敦",image:"barrafina.jpg",isHasVisited:true),
+        ResutrantStruct(name:"多尼西亚",type:"西班牙式",location:"伦敦",image:"donostia.jpg",isHasVisited:true),
+        ResutrantStruct(name:"皇家橡树",type:"英式",location:"伦敦",image:"royaloak.jpg",isHasVisited:true),
+        ResutrantStruct(name:"泰咖啡",type:"泰式",location:"伦敦",image:"thaicafe.jpg",isHasVisited:true)
+    ]
     
-    var resturantsImages =
-        ["cafedeadend.jpg", "homei.jpg", "teakha.jpg", "cafeloisl.jpg", "petiteoyster.jpg", "forkeerestaurant.jpg", "posatelier.jpg", "bourkestreetbakery.jpg", "haighschocolate.jpg", "palominoespresso.jpg", "upstate.jpg", "traif.jpg", "grahamavenuemeats.jpg", "wafflewolf.jpg", "fiveleaves.jpg", "cafelore.jpg", "confessional.jpg", "barrafina.jpg", "donostia.jpg", "royaloak.jpg", "thaicafe.jpg"]
-    
-    var resturantsPlace = ["香港", "香港", "香港", "香港", "香港", "香港", "香港", "悉尼", "悉尼", "悉尼", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "纽约", "伦敦", "伦敦", "伦敦", "伦敦"]
-    
-    var resturantsType = ["咖啡 & 茶店","咖啡", "茶屋", "奥地利式 & 休闲饮料","法式", "面包房", "面包房", "巧克力", "咖啡", "美式 & 海鲜", "美式", "美式","早餐 & 早午餐", "法式 & 茶", "咖啡 & 茶", "拉丁美式", "西班牙式", "西班牙式", "西班牙式", "英式", "泰式"]
-    
-    var hasVisitedFlag = [Bool](count:21,repeatedValue:true)
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,14 +52,14 @@ class ResturantTVController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
         
-        cell.resturantImg.image = UIImage(named: resturantsImages[indexPath.row])
-        cell.resturantName.text = resturants[indexPath.row]
-        cell.resturantPlace.text = resturantsPlace[indexPath.row]
-        cell.resturantType.text = resturantsType[indexPath.row]
+        cell.resturantImg.image = UIImage(named: resturants[indexPath.row].image)
+        cell.resturantName.text = resturants[indexPath.row].name
+        cell.resturantPlace.text = resturants[indexPath.row].location
+        cell.resturantType.text = resturants[indexPath.row].type
 //        cell.accessoryType = hasVisitedFlag[indexPath.row] ? .Checkmark: .None
         
         cell.hasVisitedImg.image = UIImage(named: "heart")
-        cell.hasVisitedImg.hidden = hasVisitedFlag[indexPath.row]
+        cell.hasVisitedImg.hidden = resturants[indexPath.row].isHasVisited
         
         //设置图片的圆角效果
         cell.resturantImg.layer.cornerRadius = cell.resturantImg.frame.size.width / 2
@@ -68,10 +81,6 @@ class ResturantTVController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             resturants.removeAtIndex(indexPath.row)
-            resturantsType.removeAtIndex(indexPath.row)
-            resturantsPlace.removeAtIndex(indexPath.row)
-            resturantsImages.removeAtIndex(indexPath.row)
-            hasVisitedFlag.removeAtIndex(indexPath.row)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //删除一行，同时有动画效果
 //            tableView.reloadData() //刷新表格,刷新整个表格，不推荐
@@ -97,10 +106,6 @@ class ResturantTVController: UITableViewController {
 
         let doDelete = UITableViewRowAction(style: .Default, title: "删除") { (action, indexPath) in
             self.resturants.removeAtIndex(indexPath.row)
-            self.resturantsType.removeAtIndex(indexPath.row)
-            self.resturantsPlace.removeAtIndex(indexPath.row)
-            self.resturantsImages.removeAtIndex(indexPath.row)
-            self.hasVisitedFlag.removeAtIndex(indexPath.row)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //删除一行，同时有动画效果
         }
@@ -122,7 +127,7 @@ class ResturantTVController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetalViewController
-            destVC.resturantImageName = resturantsImages[(tableView.indexPathForSelectedRow?.row)!]
+            destVC.resturantImageName = resturants[(tableView.indexPathForSelectedRow?.row)!].image
         }
     }
  
