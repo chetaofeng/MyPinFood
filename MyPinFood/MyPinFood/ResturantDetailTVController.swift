@@ -24,7 +24,7 @@ class ResturantDetailTVController: UITableViewController {
         tableView.tableFooterView = UIView(frame:CGRectZero)        //移除空行
         tableView.separatorColor  = UIColor(white: 0.9, alpha: 1)   //更改分割线的颜色
         
-        //设置单元格自适应高度  高度自适应之后，就需要添加其相对顶距和底距
+        //设置单元格自适应高度  高度自适应之后，就需要添加其相对顶距和底距 
         tableView.estimatedRowHeight = 36
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -114,6 +114,11 @@ class ResturantDetailTVController: UITableViewController {
     //设置顶部状态条的颜色
     override func viewDidAppear(animated: Bool) {
         self.navigationController?.navigationBar.barStyle = .Black
+    }
+    
+    //设置反向专场
+    @IBAction func close(segue:UIStoryboardSegue){
+        //反向专场的时候传递参数
     }
 
 }
