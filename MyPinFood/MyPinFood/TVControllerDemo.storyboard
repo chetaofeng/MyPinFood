@@ -132,16 +132,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="35.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gdj-dH-gxJ">
-                                            <rect key="frame" x="8" y="6" width="304" height="21"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gdj-dH-gxJ">
+                                            <rect key="frame" x="8" y="8" width="304" height="19"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="261" verticalHuggingPriority="251" misplaced="YES" text="字段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-Ax-OPO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="261" verticalHuggingPriority="251" text="字段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSX-Ax-OPO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101.5" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj4-zQ-h5t">
-                                                    <rect key="frame" x="102" y="0.0" width="203" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="值" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj4-zQ-h5t">
+                                                    <rect key="frame" x="101.5" y="0.0" width="202.5" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -153,8 +153,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Gdj-dH-gxJ" secondAttribute="bottom" id="Ife-jc-zzm"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="Gdj-dH-gxJ" secondAttribute="leading" id="Ldk-ZX-RDe"/>
                                         <constraint firstItem="Gdj-dH-gxJ" firstAttribute="centerY" secondItem="UEm-6h-x11" secondAttribute="centerY" id="bfs-nD-KF1"/>
+                                        <constraint firstItem="Gdj-dH-gxJ" firstAttribute="top" secondItem="UEm-6h-x11" secondAttribute="topMargin" id="cQF-8P-pTe"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Gdj-dH-gxJ" secondAttribute="trailing" id="kvH-MA-UPo"/>
                                     </constraints>
                                 </tableViewCellContentView>

@@ -23,6 +23,10 @@ class ResturantDetailTVController: UITableViewController {
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)  //设置表格背景颜色
         tableView.tableFooterView = UIView(frame:CGRectZero)        //移除空行
         tableView.separatorColor  = UIColor(white: 0.9, alpha: 1)   //更改分割线的颜色
+        
+        //设置单元格自适应高度  高度自适应之后，就需要添加其相对顶距和底距
+        tableView.estimatedRowHeight = 36
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {

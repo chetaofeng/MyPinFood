@@ -10,7 +10,7 @@ import UIKit
 
 class ResturantTVController: UITableViewController {
     var resturants = [
-        ResutrantStruct(name:"咖啡胡同",type:"咖啡 & 茶店",location:"香港",image:"cafedeadend.jpg",isHasVisited:true),
+        ResutrantStruct(name:"咖啡胡同",type:"咖啡 & 茶店",location:"香港上环德普道西78号G／F",image:"cafedeadend.jpg",isHasVisited:true),
         ResutrantStruct(name:"霍米",type:"咖啡",location:"香港",image:"homei.jpg",isHasVisited:true),
         ResutrantStruct(name:"茶.家",type:"茶屋",location:"香港",image:"teakha.jpg",isHasVisited:true),
         ResutrantStruct(name:"洛伊斯咖啡",type:"奥地利式 & 休闲饮料",location:"香港",image:"cafeloisl.jpg",isHasVisited:true),
