@@ -12,6 +12,7 @@ class ResturantDetailTVController: UITableViewController {
 
     var resturantStruct:ResutrantStruct!
     @IBOutlet weak var resturantImageView: UIImageView!
+    @IBOutlet weak var ratingBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +120,12 @@ class ResturantDetailTVController: UITableViewController {
     //设置反向专场
     @IBAction func close(segue:UIStoryboardSegue){
         //反向专场的时候传递参数
+        if let reviewVC = segue.sourceViewController as? ResturantReviewViewController{
+            if let rating = reviewVC.rating{
+                self.resturantStruct.rating = rating
+                self.ratingBtn.setImage(UIImage(named: rating), forState: .Normal)
+            }
+        }
     }
 
 }

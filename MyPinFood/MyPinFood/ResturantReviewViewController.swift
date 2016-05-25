@@ -10,6 +10,8 @@ import UIKit
 
 class ResturantReviewViewController: UIViewController {
 
+    var rating:String?
+    
     @IBOutlet weak var backResutrantImage: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
     
@@ -58,5 +60,16 @@ class ResturantReviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func ratingButtonTaped(sender: UIButton) {
+        switch sender.tag {
+        case 100:rating = "dislike"
+        case 200:rating = "good"
+        case 300:rating = "great"
+        default:
+            rating = ""
+        }
+        
+        performSegueWithIdentifier("returnDetail", sender: sender)
+    }
 }
