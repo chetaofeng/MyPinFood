@@ -314,6 +314,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="backResutrantImage" destination="woA-Uy-Yjf" id="EbG-v2-f0S"/>
+                        <outlet property="stackView" destination="6yJ-DU-0di" id="WcW-S3-Ba1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsu-it-u0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
