@@ -103,15 +103,14 @@ class ResturantDetailTVController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //转场到地图界面  同时传递参数
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showMap" {
+            let destVC = segue.destinationViewController as! MapViewController
+            destVC.resturantStruct = self.resturantStruct
+        }
     }
-    */
+    
     //设置顶部状态条的颜色
     override func viewDidAppear(animated: Bool) {
         self.navigationController?.navigationBar.barStyle = .Black
