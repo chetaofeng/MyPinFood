@@ -43,6 +43,18 @@ class AddResturantTableViewController: UITableViewController ,UIImagePickerContr
         pickedImage.contentMode = .ScaleAspectFill
         pickedImage.clipsToBounds = true
         
+        
+        //用代码进行布局处理
+        let leftCons = NSLayoutConstraint(item: pickedImage, attribute: .Leading, relatedBy: .Equal, toItem: pickedImage.superview, attribute: .Leading, multiplier: 1, constant: 0)
+        let rightCons = NSLayoutConstraint(item: pickedImage, attribute: .Trailing, relatedBy: .Equal, toItem: pickedImage.superview, attribute: .Trailing, multiplier: 1, constant: 0)
+        let topCons = NSLayoutConstraint(item: pickedImage, attribute: .Top, relatedBy: .Equal, toItem: pickedImage.superview, attribute: .Top, multiplier: 1, constant: 0)
+        let bottomCons = NSLayoutConstraint(item: pickedImage, attribute: .Bottom, relatedBy: .Equal, toItem: pickedImage.superview, attribute: .Bottom, multiplier: 1, constant: 0)
+        
+        leftCons.active = true
+        rightCons.active = true
+        topCons.active = true
+        bottomCons.active = true
+        
         dismissViewControllerAnimated(true, completion: nil)    //让相册选择视图腿长
     }
     
