@@ -39,6 +39,12 @@ class MapViewController: UIViewController ,MKMapViewDelegate{
                 }
             }
         }
+        
+        //定制地图的其它功能
+        mapView.showsCompass = true //指南针
+        mapView.showsTraffic = true //交通量
+        mapView.showsScale = true  //比例尺
+        mapView.showsUserLocation = true //显示用户位置
     }
 
     override func didReceiveMemoryWarning() {
