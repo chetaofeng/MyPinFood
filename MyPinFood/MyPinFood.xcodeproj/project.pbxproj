@@ -11,6 +11,7 @@
 		CB3520A21CF576E200814577 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3520A11CF576E200814577 /* Resturant.swift */; };
 		CB3520A71CF5885000814577 /* ResturantDetailTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3520A61CF5885000814577 /* ResturantDetailTVController.swift */; };
 		CB3520A91CF595AD00814577 /* ResturantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3520A81CF595AD00814577 /* ResturantDetailTableViewCell.swift */; };
+		CB618A731CF735490058091F /* AddResturantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A721CF735490058091F /* AddResturantTableViewController.swift */; };
 		CBD7DCDB1CF624C4005A7C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */; };
 		CBD7DCDD1CF690C7005A7C07 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */; };
 		CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */; };
@@ -33,6 +34,7 @@
 		CB3520A31CF577D200814577 /* DataTrans.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataTrans.playground; sourceTree = "<group>"; };
 		CB3520A61CF5885000814577 /* ResturantDetailTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantDetailTVController.swift; sourceTree = "<group>"; };
 		CB3520A81CF595AD00814577 /* ResturantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		CB618A721CF735490058091F /* AddResturantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddResturantTableViewController.swift; sourceTree = "<group>"; };
 		CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CBF5CE171CF0B5B3009BBE4F /* MyPinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 				CB3520A81CF595AD00814577 /* ResturantDetailTableViewCell.swift */,
 				CB1B98831CF60FF600DADAF4 /* ResturantReviewViewController.swift */,
 				CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */,
+				CB618A721CF735490058091F /* AddResturantTableViewController.swift */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				CB3520A91CF595AD00814577 /* ResturantDetailTableViewCell.swift in Sources */,
 				CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */,
 				CB3520A21CF576E200814577 /* Resturant.swift in Sources */,
+				CB618A731CF735490058091F /* AddResturantTableViewController.swift in Sources */,
 				CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */,
 				CBF5CE391CF4B42D009BBE4F /* ResturantDetalViewController.swift in Sources */,
 				CB1B98841CF60FF600DADAF4 /* ResturantReviewViewController.swift in Sources */,
