@@ -9,32 +9,18 @@
 import UIKit
 
 class ResturantDetalViewController: UIViewController {
-
-    var resturantImageName:String = ""
-    var resturantStruct:ResutrantStruct!
+ 
+    var resutrantEntity:ResturantEntity!
     
     @IBOutlet weak var detailResutrantImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(resturantImageName)
-        detailResutrantImage.image = UIImage(named: resturantStruct.image)
+        detailResutrantImage.image = UIImage(data: resutrantEntity.image!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

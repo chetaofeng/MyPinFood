@@ -10,7 +10,7 @@ import Foundation
 
 //此处可以使用结构体和类两种方式，推荐用结构体
 
-struct ResutrantStruct {
+struct ResutrantStruct1 {
     var name:String
     var type:String
     var location:String
@@ -19,7 +19,7 @@ struct ResutrantStruct {
     var rating:String = ""
 }
 
-class Resutrant {
+class ResutrantClass {
     var name:String
     var type:String
     var location:String

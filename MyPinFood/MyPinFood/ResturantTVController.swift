@@ -9,29 +9,7 @@
 import UIKit
 
 class ResturantTVController: UITableViewController {
-    var resturants = [
-        ResutrantStruct(name:"咖啡胡同",type:"咖啡 & 茶店",location:"香港上环德普道西78号G／F",image:"cafedeadend.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"霍米",type:"咖啡",location:"香港",image:"homei.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"茶.家",type:"茶屋",location:"香港",image:"teakha.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"洛伊斯咖啡",type:"奥地利式 & 休闲饮料",location:"香港",image:"cafeloisl.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"贝蒂生蚝",type:"法式",location:"香港",image:"petiteoyster.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"福奇餐馆",type:"面包房",location:"香港",image:"forkeerestaurant.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"阿波画室",type:"面包房",location:"香港",image:"posatelier.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"伯克街面包坊",type:"巧克力",location:"悉尼",image:"bourkestreetbakery.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"黑氏巧克力",type:"咖啡",location:"悉尼",image:"haighschocolate.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"惠灵顿雪梨",type:"美式 & 海鲜",location:"悉尼",image:"palominoespresso.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"北州",type:"美式",location:"纽约",image:"upstate.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"布鲁克林塔菲",type:"美式",location:"纽约",image:"traif.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"格雷厄姆大街肉",type:"早餐 & 早午餐",location:"纽约",image:"grahamavenuemeats.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"华夫饼 & 沃夫",type:"法式 & 茶",location:"纽约",image:"wafflewolf.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"五叶",type:"咖啡 & 茶",location:"纽约",image:"fiveleaves.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"眼光咖啡",type:"拉丁美式",location:"纽约",image:"cafelore.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"忏悔",type:"西班牙式",location:"纽约",image:"confessional.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"巴拉菲娜",type:"西班牙式",location:"伦敦",image:"barrafina.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"多尼西亚",type:"西班牙式",location:"伦敦",image:"donostia.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"皇家橡树",type:"英式",location:"伦敦",image:"royaloak.jpg",isHasVisited:true,rating:""),
-        ResutrantStruct(name:"泰咖啡",type:"泰式",location:"伦敦",image:"thaicafe.jpg",isHasVisited:true,rating:"")
-    ]
+    var resturants:[ResturantEntity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +32,14 @@ class ResturantTVController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
         
-        cell.resturantImg.image = UIImage(named: resturants[indexPath.row].image)
+        cell.resturantImg.image = UIImage(data: resturants[indexPath.row].image!)
         cell.resturantName.text = resturants[indexPath.row].name
         cell.resturantPlace.text = resturants[indexPath.row].location
         cell.resturantType.text = resturants[indexPath.row].type
 //        cell.accessoryType = hasVisitedFlag[indexPath.row] ? .Checkmark: .None
         
         cell.hasVisitedImg.image = UIImage(named: "heart")
-        cell.hasVisitedImg.hidden = resturants[indexPath.row].isHasVisited
+        cell.hasVisitedImg.hidden = resturants[indexPath.row].isHasVisited!.boolValue
         
         //设置图片的圆角效果
         cell.resturantImg.layer.cornerRadius = cell.resturantImg.frame.size.width / 2
@@ -129,11 +107,11 @@ class ResturantTVController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetalViewController
-            destVC.resturantImageName = resturants[(tableView.indexPathForSelectedRow?.row)!].image
-            destVC.resturantStruct = resturants[(tableView.indexPathForSelectedRow?.row)!]
+//            destVC.resturantImageName = resturants[(tableView.indexPathForSelectedRow?.row)!].image
+            destVC.resutrantEntity = resturants[(tableView.indexPathForSelectedRow?.row)!]
         }else if segue.identifier == "showNewResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetailTVController
-            destVC.resturantStruct = resturants[(tableView.indexPathForSelectedRow?.row)!]
+            destVC.resutrantEntity = resturants[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
  

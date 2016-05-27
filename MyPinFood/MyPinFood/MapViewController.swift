@@ -11,7 +11,7 @@ import MapKit
 
 class MapViewController: UIViewController ,MKMapViewDelegate{
     
-    var resturantStruct:ResutrantStruct!
+    var resutrantEntity:ResturantEntity!
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -20,7 +20,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate{
 
         //地址转换
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(resturantStruct.location) { (placeMarks, error) in
+        geoCoder.geocodeAddressString(resutrantEntity.location!) { (placeMarks, error) in
             if error != nil{
                 print(error)
             }else{
@@ -28,8 +28,8 @@ class MapViewController: UIViewController ,MKMapViewDelegate{
                     let placeMark = placeMarks[0]
                     
                     let annotation = MKPointAnnotation()
-                    annotation.title = self.resturantStruct.name
-                    annotation.subtitle = self.resturantStruct.type
+                    annotation.title = self.resutrantEntity.name
+                    annotation.subtitle = self.resutrantEntity.type
                     
                     if let location = placeMark.location {
                         annotation.coordinate = location.coordinate
@@ -80,7 +80,7 @@ class MapViewController: UIViewController ,MKMapViewDelegate{
         
         //添加缩略图
         let leftIconView = UIImageView(frame: CGRectMake(0, 0, 53, 53))
-        leftIconView.image = UIImage(named: self.resturantStruct.image)
+        leftIconView.image = UIImage(data: self.resutrantEntity.image!)
         annotationView?.leftCalloutAccessoryView = leftIconView
         
         return annotationView

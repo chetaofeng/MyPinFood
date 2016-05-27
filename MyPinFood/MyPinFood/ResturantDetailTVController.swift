@@ -10,16 +10,16 @@ import UIKit
 
 class ResturantDetailTVController: UITableViewController {
 
-    var resturantStruct:ResutrantStruct!
+    var resutrantEntity:ResturantEntity!
     @IBOutlet weak var resturantImageView: UIImageView!
     @IBOutlet weak var ratingBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = resturantStruct.name    //设置视图标题
+        title = resutrantEntity.name    //设置视图标题
         
-        resturantImageView.image = UIImage(named: resturantStruct.image)
+        resturantImageView.image = UIImage(data: resutrantEntity.image!)
         
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)  //设置表格背景颜色
         tableView.tableFooterView = UIView(frame:CGRectZero)        //移除空行
@@ -48,16 +48,16 @@ class ResturantDetailTVController: UITableViewController {
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "餐馆名"
-            cell.valueLabel.text = resturantStruct.name
+            cell.valueLabel.text = resutrantEntity.name
         case 1:
             cell.fieldLabel.text = "类型"
-            cell.valueLabel.text = resturantStruct.type
+            cell.valueLabel.text = resutrantEntity.type
         case 2:
             cell.fieldLabel.text = "地址"
-            cell.valueLabel.text = resturantStruct.location
+            cell.valueLabel.text = resutrantEntity.location
         case 3:
             cell.fieldLabel.text = "是否来过"
-            cell.valueLabel.text = resturantStruct.isHasVisited ? "来过" : "没来过"
+            cell.valueLabel.text = resutrantEntity.isHasVisited!.boolValue ? "来过" : "没来过"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
@@ -107,7 +107,7 @@ class ResturantDetailTVController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMap" {
             let destVC = segue.destinationViewController as! MapViewController
-            destVC.resturantStruct = self.resturantStruct
+            destVC.resutrantEntity = self.resutrantEntity
         }
     }
     
@@ -121,7 +121,7 @@ class ResturantDetailTVController: UITableViewController {
         //反向专场的时候传递参数
         if let reviewVC = segue.sourceViewController as? ResturantReviewViewController{
             if let rating = reviewVC.rating{
-                self.resturantStruct.rating = rating
+                self.resutrantEntity.rating = rating
                 self.ratingBtn.setImage(UIImage(named: rating), forState: .Normal)
             }
         }
