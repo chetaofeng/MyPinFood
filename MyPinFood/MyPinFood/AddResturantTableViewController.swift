@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class AddResturantTableViewController: UITableViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
-
+    
     @IBOutlet weak var pickedImage: UIImageView!
-   
+    @IBOutlet weak var locationTF: UITextField!
+    @IBOutlet weak var typeTF: UITextField!
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var isVisitedLB: UILabel!
+    
+    var resturantEntity:ResturantEntity!
+    var isVisited:Bool = false
+    
     override func viewDidLoad() {
+        
+       
         super.viewDidLoad()
     }
 
@@ -57,6 +67,45 @@ class AddResturantTableViewController: UITableViewController ,UIImagePickerContr
         
         dismissViewControllerAnimated(true, completion: nil)    //让相册选择视图腿长
     }
+    
+    //是否来过按钮的处理
+    @IBAction func isVisitedBtnTaped(sender: AnyObject) {
+        if sender.tag == 8001 {
+            isVisited = true
+            isVisitedLB.text = "我来过"
+        }else{
+            isVisited = false
+            isVisitedLB.text = "我没有来过"
+        }
+    }
+
+    
+    //保存按钮的处理
+    @IBAction func saveResturantAction(sender: AnyObject) {
+        //1. 获取CoreData缓冲区
+        let buffer = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        //2. 设置插入对象到缓冲区
+        resturantEntity = NSEntityDescription.insertNewObjectForEntityForName("ResturantEntity", inManagedObjectContext: buffer) as! ResturantEntity
+        //3. 设置实体的属性
+        resturantEntity.name = nameTF.text
+        resturantEntity.type = typeTF.text
+        resturantEntity.location = locationTF.text
+        resturantEntity.isHasVisited = isVisited
+        if let image = pickedImage.image{
+            resturantEntity.image = UIImagePNGRepresentation(image) //将图片转换成PNG格式
+        }
+        //4. 保存CoreData对象
+        do{
+            try buffer.save()
+        }catch{
+            print(error)
+            return
+        }
+        
+        //返回列表页面
+        performSegueWithIdentifier("unwindToHomeList", sender: sender)
+    }
+
     
     /*
     // Override to support conditional editing of the table view.

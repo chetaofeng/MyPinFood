@@ -248,13 +248,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3M2-a8-bFG">
+                                                <button opaque="NO" tag="8001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3M2-a8-bFG">
                                                     <rect key="frame" x="16" y="33" width="30" height="30"/>
                                                     <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="是"/>
+                                                    <connections>
+                                                        <action selector="isVisitedBtnTaped:" destination="Z2j-HD-SXN" eventType="touchUpInside" id="8uR-5j-pYC"/>
+                                                    </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOD-iS-x7l">
+                                                <button opaque="NO" tag="8002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOD-iS-x7l">
                                                     <rect key="frame" x="62" y="33" width="30" height="30"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,13 +286,23 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="281-Bt-4cE">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="p6S-en-mk2" kind="unwind" unwindAction="unwindToHomeScreen:" id="ceo-qy-DED"/>
+                                <segue destination="p6S-en-mk2" kind="unwind" identifier="unwindToHomeList" unwindAction="unwindToHomeScreen:" id="ceo-qy-DED"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="y7t-vY-Q5g">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveResturantAction:" destination="Z2j-HD-SXN" id="qBW-QW-Qk1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="isVisitedLB" destination="WLf-FO-x2W" id="B1t-FM-e0a"/>
+                        <outlet property="locationTF" destination="NsC-35-0P7" id="1pk-F6-xFY"/>
+                        <outlet property="nameTF" destination="6or-e7-DzQ" id="q5N-vP-YAq"/>
                         <outlet property="pickedImage" destination="uUQ-Ka-8W4" id="mON-cp-azK"/>
+                        <outlet property="typeTF" destination="jVn-EH-FgO" id="z2I-J6-A9h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSc-o8-vgp" userLabel="First Responder" sceneMemberID="firstResponder"/>
