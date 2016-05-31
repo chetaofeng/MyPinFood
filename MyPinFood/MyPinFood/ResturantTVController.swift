@@ -7,14 +7,32 @@
 //
 
 import UIKit
+import CoreData
 
-class ResturantTVController: UITableViewController {
+class ResturantTVController: UITableViewController,NSFetchedResultsControllerDelegate {
     var resturants:[ResturantEntity] = []
+    var frc:NSFetchedResultsController! //获取CoreData 数据的代理变量
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil) //更改返回按钮样式
+        
+        let request = NSFetchRequest(entityName: "ResturantEntity")
+        let sd = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sd]
+        let buffer = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        frc = NSFetchedResultsController(fetchRequest: request, managedObjectContext: buffer, sectionNameKeyPath: nil, cacheName: nil)
+        frc.delegate = self
+        
+        do{
+          try frc.performFetch()
+            resturants = frc.fetchedObjects as! [ResturantEntity]
+        }catch{
+            print(error)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,9 +103,18 @@ class ResturantTVController: UITableViewController {
         doShare.backgroundColor = UIColor.greenColor()
 
         let doDelete = UITableViewRowAction(style: .Default, title: "删除") { (action, indexPath) in
-            self.resturants.removeAtIndex(indexPath.row)
+//            self.resturants.removeAtIndex(indexPath.row)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //删除一行，同时有动画效果
             
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade) //删除一行，同时有动画效果
+            //从CoreData中删除
+            let buffer = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+            let resturantToDel = self.frc.objectAtIndexPath(indexPath) as! ResturantEntity
+            buffer.deleteObject(resturantToDel)
+            do{
+                try buffer.save()
+            }catch{
+                print(error)
+            }
         }
 
         return [doShare,doDelete]
@@ -151,5 +178,35 @@ class ResturantTVController: UITableViewController {
     //新增餐馆的反向转场处理
     @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue){
         
+    }
+    
+    // ------------------- CoreData的代理方法 --------------------
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        tableView.beginUpdates()
+    }
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type {
+        case .Insert:
+            if let _indexPath = newIndexPath {  //检测newIndexPath是否存在
+                tableView.insertRowsAtIndexPaths([_indexPath], withRowAnimation: .Automatic)
+            }
+        case .Delete:
+            if let _indexPath = indexPath {
+                tableView.deleteRowsAtIndexPaths([_indexPath], withRowAnimation: .Automatic)
+            }
+        case .Update:
+            if let _indexPath = indexPath {
+                tableView.reloadRowsAtIndexPaths([_indexPath], withRowAnimation: .Automatic)
+            }
+        case .Move:
+             tableView.reloadData()
+        default:
+            tableView.reloadData()  //重新加载列表
+        }
+        
+        resturants = controller.fetchedObjects as! [ResturantEntity]
+    }
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates()
     }
 }

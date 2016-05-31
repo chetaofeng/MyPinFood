@@ -123,6 +123,14 @@ class ResturantDetailTVController: UITableViewController {
             if let rating = reviewVC.rating{
                 self.resutrantEntity.rating = rating
                 self.ratingBtn.setImage(UIImage(named: rating), forState: .Normal)
+                
+                //保存评价信息到CoreData
+                let buffer = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+                do{
+                    try buffer.save()
+                }catch{
+                    print(error)
+                }
             }
         }
     }
