@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
-class ResturantTVController: UITableViewController,NSFetchedResultsControllerDelegate {
-    var resturants:[ResturantEntity] = []
+class ResturantTVController: UITableViewController,NSFetchedResultsControllerDelegate ,UISearchResultsUpdating{
+    var resturants:[ResturantEntity] = [] //用于保存餐馆列表信息
     var frc:NSFetchedResultsController! //获取CoreData 数据的代理变量
+    var sc:UISearchController!
+    var searchResults:[ResturantEntity] = [] //用于保存搜索结果
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,11 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
             print(error)
         }
         
+        sc = UISearchController(searchResultsController: nil)
+        tableView.tableHeaderView = sc.searchBar    //设置搜索条的出现在页眉位置
+        sc.searchResultsUpdater = self
+        sc.dimsBackgroundDuringPresentation = false  //搜索时背景是否变暗
+        sc.searchBar.placeholder = "请输入餐馆名。。。"
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,20 +51,22 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return resturants.count
+        return sc.active ? searchResults.count : resturants.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomTableViewCell
         
-        cell.resturantImg.image = UIImage(data: resturants[indexPath.row].image!)
-        cell.resturantName.text = resturants[indexPath.row].name
-        cell.resturantPlace.text = resturants[indexPath.row].location
-        cell.resturantType.text = resturants[indexPath.row].type
+        let r = sc.active ? searchResults[indexPath.row] : resturants[indexPath.row]
+        
+        cell.resturantImg.image = UIImage(data: r.image!)
+        cell.resturantName.text = r.name
+        cell.resturantPlace.text = r.location
+        cell.resturantType.text = r.type
 //        cell.accessoryType = hasVisitedFlag[indexPath.row] ? .Checkmark: .None
         
         cell.hasVisitedImg.image = UIImage(named: "heart")
-        cell.hasVisitedImg.hidden = resturants[indexPath.row].isHasVisited!.boolValue
+        cell.hasVisitedImg.hidden = r.isHasVisited!.boolValue
         
         //设置图片的圆角效果
         cell.resturantImg.layer.cornerRadius = cell.resturantImg.frame.size.width / 2
@@ -66,14 +75,9 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        return !sc.active   //搜索时不可编辑
     }
-    */
 
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -135,10 +139,10 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
         if segue.identifier == "showResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetalViewController
 //            destVC.resturantImageName = resturants[(tableView.indexPathForSelectedRow?.row)!].image
-            destVC.resutrantEntity = resturants[(tableView.indexPathForSelectedRow?.row)!]
+            destVC.resutrantEntity = sc.active ? searchResults[(tableView.indexPathForSelectedRow?.row)!] : resturants[(tableView.indexPathForSelectedRow?.row)!]
         }else if segue.identifier == "showNewResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetailTVController
-            destVC.resutrantEntity = resturants[(tableView.indexPathForSelectedRow?.row)!]
+            destVC.resutrantEntity =  sc.active ? searchResults[(tableView.indexPathForSelectedRow?.row)!] : resturants[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
  
@@ -208,5 +212,19 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
     }
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
+    }
+    
+    
+    //------------------- 搜索条 --------------------
+    func searchFun(textToSearch:String){
+        searchResults = resturants.filter({ (r) -> Bool in
+            return (r.name?.containsString(textToSearch))!
+        })
+    }
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        if let textToSearch = sc.searchBar.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) {
+            searchFun(textToSearch)
+            tableView.reloadData()
+        }
     }
 }
