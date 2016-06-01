@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -310,6 +311,98 @@
             </objects>
             <point key="canvasLocation" x="1726" y="1061"/>
         </scene>
+        <!--Guide Page View Controller-->
+        <scene sceneID="fZI-ou-RPu">
+            <objects>
+                <pageViewController storyboardIdentifier="guideController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6ud-V6-PGj" customClass="GuidePageViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIq-ZN-tNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="1859"/>
+        </scene>
+        <!--Guide Content View Controller-->
+        <scene sceneID="Ec5-QC-NWF">
+            <objects>
+                <viewController storyboardIdentifier="guideContentController" id="oeu-GJ-HOv" customClass="GuideContentViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="A1y-cM-HwL"/>
+                        <viewControllerLayoutGuide type="bottom" id="FLM-mM-BVs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CYq-Mk-qWt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="私人定制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQE-a4-QOO">
+                                <rect key="frame" x="110" y="28" width="100" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打造自己的美食向导" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27r-oI-K6O">
+                                <rect key="frame" x="84" y="414" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="5Q9-hi-PgW">
+                                <rect key="frame" x="140" y="511" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3va-vw-y2H">
+                                <rect key="frame" x="250" y="528" width="60" height="30"/>
+                                <state key="normal" title="立即体验"/>
+                                <connections>
+                                    <action selector="dontBtnTapped:" destination="oeu-GJ-HOv" eventType="touchUpInside" id="DSN-r3-AoJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZl-TB-3Dx">
+                                <rect key="frame" x="23" y="120" width="273" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kZl-TB-3Dx" secondAttribute="height" multiplier="283:249" id="MTE-ZD-ln0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FLM-mM-BVs" firstAttribute="top" secondItem="3va-vw-y2H" secondAttribute="bottom" constant="10" id="1Y0-so-i6i"/>
+                            <constraint firstItem="TQE-a4-QOO" firstAttribute="centerX" secondItem="CYq-Mk-qWt" secondAttribute="centerX" id="4PN-TJ-vqH"/>
+                            <constraint firstItem="kZl-TB-3Dx" firstAttribute="centerY" secondItem="CYq-Mk-qWt" secondAttribute="centerY" constant="-48.5" id="5xT-Ko-DRI"/>
+                            <constraint firstItem="27r-oI-K6O" firstAttribute="centerX" secondItem="CYq-Mk-qWt" secondAttribute="centerX" id="JVS-KR-Hgx"/>
+                            <constraint firstItem="kZl-TB-3Dx" firstAttribute="top" secondItem="TQE-a4-QOO" secondAttribute="bottom" constant="62" id="OlL-LV-kMn"/>
+                            <constraint firstItem="kZl-TB-3Dx" firstAttribute="centerX" secondItem="CYq-Mk-qWt" secondAttribute="centerX" constant="-8" id="Om8-VC-Ro5"/>
+                            <constraint firstItem="FLM-mM-BVs" firstAttribute="top" secondItem="5Q9-hi-PgW" secondAttribute="bottom" constant="20" id="RAG-jV-I0S"/>
+                            <constraint firstAttribute="trailing" secondItem="3va-vw-y2H" secondAttribute="trailing" constant="10" id="TFw-lH-Jv1"/>
+                            <constraint firstItem="kZl-TB-3Dx" firstAttribute="centerX" secondItem="CYq-Mk-qWt" secondAttribute="centerX" id="UfG-fF-DYK"/>
+                            <constraint firstItem="27r-oI-K6O" firstAttribute="centerX" secondItem="CYq-Mk-qWt" secondAttribute="centerX" id="WN2-E3-d9x"/>
+                            <constraint firstItem="FLM-mM-BVs" firstAttribute="top" secondItem="27r-oI-K6O" secondAttribute="bottom" constant="133" id="eWY-Mu-7p7"/>
+                            <constraint firstItem="TQE-a4-QOO" firstAttribute="top" secondItem="A1y-cM-HwL" secondAttribute="bottom" constant="8" id="ixu-Aw-Beu"/>
+                            <constraint firstItem="5Q9-hi-PgW" firstAttribute="centerX" secondItem="CYq-Mk-qWt" secondAttribute="centerX" id="kqh-qI-n0f"/>
+                            <constraint firstItem="kZl-TB-3Dx" firstAttribute="leading" secondItem="CYq-Mk-qWt" secondAttribute="leadingMargin" constant="-6" id="trz-Z6-m1C"/>
+                            <constraint firstItem="27r-oI-K6O" firstAttribute="top" secondItem="kZl-TB-3Dx" secondAttribute="bottom" constant="54" id="xBq-bm-roH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5xT-Ko-DRI"/>
+                                <exclude reference="Om8-VC-Ro5"/>
+                                <exclude reference="trz-Z6-m1C"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="doneBtn" destination="3va-vw-y2H" id="BG4-T5-Wf3"/>
+                        <outlet property="footerLB" destination="27r-oI-K6O" id="GYN-AS-LOZ"/>
+                        <outlet property="headerLB" destination="TQE-a4-QOO" id="EFB-qT-wDI"/>
+                        <outlet property="imageLB" destination="kZl-TB-3Dx" id="2uC-Ly-jQ3"/>
+                        <outlet property="pageCtrl" destination="5Q9-hi-PgW" id="uiB-B7-oki"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OvJ-4P-MgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152" y="1870"/>
+        </scene>
         <!--Resturant DetailTV Controller-->
         <scene sceneID="GXM-xI-JQQ">
             <objects>
@@ -425,7 +518,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o4-QW-KtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2622" y="691"/>
+            <point key="canvasLocation" x="2774" y="333"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="6Lv-1W-DvR">
@@ -584,7 +677,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xsu-it-u0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="C3t-hT-cap" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3085" y="1162"/>
+            <point key="canvasLocation" x="3261" y="350"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hnw-pC-Fup">

@@ -41,7 +41,19 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
         sc.dimsBackgroundDuringPresentation = false  //搜索时背景是否变暗
         sc.searchBar.placeholder = "请输入餐馆名。。。"
     }
-
+    
+    //在界面即将显示之前调用页面导航
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if userDefaults.boolForKey("showedGuide") {
+            if let guidePageVC = storyboard?.instantiateViewControllerWithIdentifier("guideController")  as? GuidePageViewController {
+                presentViewController(guidePageVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

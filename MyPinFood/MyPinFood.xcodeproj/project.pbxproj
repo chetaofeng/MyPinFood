@@ -15,6 +15,8 @@
 		CB618A761CF88C4C0058091F /* MyFoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB618A741CF88C4C0058091F /* MyFoodPin.xcdatamodeld */; };
 		CB618A791CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A771CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift */; };
 		CB618A7A1CF8926F0058091F /* ResturantEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A781CF8926F0058091F /* ResturantEntity.swift */; };
+		CB618A7C1CFEC61C0058091F /* GuideContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */; };
+		CB618A801CFEC8D80058091F /* GuidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */; };
 		CBD7DCDB1CF624C4005A7C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */; };
 		CBD7DCDD1CF690C7005A7C07 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */; };
 		CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 		CB618A751CF88C4C0058091F /* MyFoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFoodPin.xcdatamodel; sourceTree = "<group>"; };
 		CB618A771CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResturantEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CB618A781CF8926F0058091F /* ResturantEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantEntity.swift; sourceTree = "<group>"; };
+		CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideContentViewController.swift; sourceTree = "<group>"; };
+		CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePageViewController.swift; sourceTree = "<group>"; };
 		CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CBF5CE171CF0B5B3009BBE4F /* MyPinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,8 @@
 				CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */,
 				CB618A721CF735490058091F /* AddResturantTableViewController.swift */,
 				CB618A741CF88C4C0058091F /* MyFoodPin.xcdatamodeld */,
+				CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */,
+				CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 				CB618A761CF88C4C0058091F /* MyFoodPin.xcdatamodeld in Sources */,
 				CB618A791CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift in Sources */,
 				CBF5CE351CF436C3009BBE4F /* ResturantTVController.swift in Sources */,
+				CB618A7C1CFEC61C0058091F /* GuideContentViewController.swift in Sources */,
 				CB3520A21CF576E200814577 /* Resturant.swift in Sources */,
+				CB618A801CFEC8D80058091F /* GuidePageViewController.swift in Sources */,
 				CB618A731CF735490058091F /* AddResturantTableViewController.swift in Sources */,
 				CBF5CE371CF447CD009BBE4F /* CustomTableViewCell.swift in Sources */,
 				CBF5CE391CF4B42D009BBE4F /* ResturantDetalViewController.swift in Sources */,
