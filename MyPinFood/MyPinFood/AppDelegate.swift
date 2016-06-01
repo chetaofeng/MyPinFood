@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //设置顶部状态栏的颜色为亮色
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        //定制TabBar的样式
+        UITabBar.appearance().selectionIndicatorImage =  UIImage(named: "tabitem-selected")
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
         return true
     }
 

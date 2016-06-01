@@ -17,6 +17,8 @@
 		CB618A7A1CF8926F0058091F /* ResturantEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A781CF8926F0058091F /* ResturantEntity.swift */; };
 		CB618A7C1CFEC61C0058091F /* GuideContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */; };
 		CB618A801CFEC8D80058091F /* GuidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */; };
+		CB618A821CFF35740058091F /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB618A811CFF35740058091F /* about.storyboard */; };
+		CB618A841CFF35840058091F /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB618A831CFF35840058091F /* discover.storyboard */; };
 		CBD7DCDB1CF624C4005A7C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */; };
 		CBD7DCDD1CF690C7005A7C07 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */; };
 		CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 		CB618A781CF8926F0058091F /* ResturantEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantEntity.swift; sourceTree = "<group>"; };
 		CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideContentViewController.swift; sourceTree = "<group>"; };
 		CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePageViewController.swift; sourceTree = "<group>"; };
+		CB618A811CFF35740058091F /* about.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
+		CB618A831CFF35840058091F /* discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = discover.storyboard; sourceTree = "<group>"; };
 		CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CBF5CE171CF0B5B3009BBE4F /* MyPinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,8 @@
 				CBF5CE2E1CF423EA009BBE4F /* TableViewDemo.storyboard */,
 				CBF5CE301CF42596009BBE4F /* TableViewDemoController.swift */,
 				CBF5CE321CF43601009BBE4F /* TVControllerDemo.storyboard */,
+				CB618A831CFF35840058091F /* discover.storyboard */,
+				CB618A811CFF35740058091F /* about.storyboard */,
 				CBF5CE341CF436C3009BBE4F /* ResturantTVController.swift */,
 				CBF5CE361CF447CD009BBE4F /* CustomTableViewCell.swift */,
 				CBF5CE381CF4B42D009BBE4F /* ResturantDetalViewController.swift */,
@@ -189,10 +195,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF5CE2D1CF35C33009BBE4F /* Login.storyboard in Resources */,
+				CB618A841CFF35840058091F /* discover.storyboard in Resources */,
 				CBF5CE2F1CF423EA009BBE4F /* TableViewDemo.storyboard in Resources */,
 				CBF5CE251CF0B5B3009BBE4F /* LaunchScreen.storyboard in Resources */,
 				CBF5CE331CF43601009BBE4F /* TVControllerDemo.storyboard in Resources */,
 				CBF5CE221CF0B5B3009BBE4F /* Assets.xcassets in Resources */,
+				CB618A821CFF35740058091F /* about.storyboard in Resources */,
 				CBF5CE201CF0B5B3009BBE4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

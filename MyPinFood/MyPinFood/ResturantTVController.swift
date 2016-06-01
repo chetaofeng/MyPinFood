@@ -151,6 +151,7 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
         if segue.identifier == "showResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetalViewController
 //            destVC.resturantImageName = resturants[(tableView.indexPathForSelectedRow?.row)!].image
+//            destVC.hidesBottomBarWhenPushed = true //以代码方式隐藏TabBar
             destVC.resutrantEntity = sc.active ? searchResults[(tableView.indexPathForSelectedRow?.row)!] : resturants[(tableView.indexPathForSelectedRow?.row)!]
         }else if segue.identifier == "showNewResturantDetail"{
             let destVC = segue.destinationViewController as! ResturantDetailTVController
