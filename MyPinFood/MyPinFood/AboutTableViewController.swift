@@ -13,7 +13,7 @@ class AboutTableViewController: UITableViewController {
 
     var sectionTitle = ["评分和反馈","关注我们"]
     var sectionContent = [["在AppStore上给我们评分","反馈意见"],["网站","微信","花川学院"]]
-    var links = ["http://huachuanxueyuan.com/user/1","https://www.baidu.com/s?wd=儿童节&tn=SE_pshlcjsy_xef5bmh","http://hcxy.me"]
+    var links = ["http://huachuanxueyuan.com/user/1","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1464801224&di=375620193331abce49661fb5d1059d99&src=http://cdn.duitang.com/uploads/item/201508/24/20150824150620_FiVQ3.jpeg","http://hcxy.me"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
