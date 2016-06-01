@@ -20,6 +20,8 @@
 		CB618A821CFF35740058091F /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB618A811CFF35740058091F /* about.storyboard */; };
 		CB618A841CFF35840058091F /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB618A831CFF35840058091F /* discover.storyboard */; };
 		CB618A8C1CFF37F20058091F /* favourite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB618A8B1CFF37F20058091F /* favourite.storyboard */; };
+		CB618A8E1CFF3B370058091F /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A8D1CFF3B370058091F /* AboutTableViewController.swift */; };
+		CB618A901CFF47F70058091F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB618A8F1CFF47F70058091F /* WebViewController.swift */; };
 		CBD7DCDB1CF624C4005A7C07 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */; };
 		CBD7DCDD1CF690C7005A7C07 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */; };
 		CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */; };
@@ -51,6 +53,8 @@
 		CB618A811CFF35740058091F /* about.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
 		CB618A831CFF35840058091F /* discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = discover.storyboard; sourceTree = "<group>"; };
 		CB618A8B1CFF37F20058091F /* favourite.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = favourite.storyboard; sourceTree = "<group>"; };
+		CB618A8D1CFF3B370058091F /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		CB618A8F1CFF47F70058091F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD7DCDC1CF690C7005A7C07 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CBF5CE171CF0B5B3009BBE4F /* MyPinFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPinFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +133,8 @@
 				CB618A741CF88C4C0058091F /* MyFoodPin.xcdatamodeld */,
 				CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */,
 				CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */,
+				CB618A8D1CFF3B370058091F /* AboutTableViewController.swift */,
+				CB618A8F1CFF47F70058091F /* WebViewController.swift */,
 			);
 			path = MyPinFood;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB618A901CFF47F70058091F /* WebViewController.swift in Sources */,
 				CBD7DCDD1CF690C7005A7C07 /* MapViewController.swift in Sources */,
 				CB618A7A1CF8926F0058091F /* ResturantEntity.swift in Sources */,
 				CB3520A91CF595AD00814577 /* ResturantDetailTableViewCell.swift in Sources */,
@@ -233,6 +240,7 @@
 				CBF5CE311CF42596009BBE4F /* TableViewDemoController.swift in Sources */,
 				CBF5CE1B1CF0B5B3009BBE4F /* AppDelegate.swift in Sources */,
 				CB3520A71CF5885000814577 /* ResturantDetailTVController.swift in Sources */,
+				CB618A8E1CFF3B370058091F /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

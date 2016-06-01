@@ -8,18 +8,31 @@
         <!--关于-->
         <scene sceneID="oLV-Sj-ARo">
             <objects>
-                <tableViewController id="vyI-ZS-r0o" sceneMemberID="viewController">
+                <tableViewController id="vyI-ZS-r0o" customClass="AboutTableViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OCS-06-43u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoxiaobo" id="Fh7-u9-xkj">
+                            <rect key="frame" x="0.0" y="64" width="320" height="85"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cPs-8X-T4y">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="IZQ-x1-hIa" style="IBUITableViewCellStyleDefault" id="cPs-8X-T4y">
+                                <rect key="frame" x="0.0" y="177" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cPs-8X-T4y" id="6K2-j3-Q0y">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IZQ-x1-hIa">
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -30,10 +43,47 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="关于" id="ah3-B8-QfA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="LTN-N6-WZu" kind="show" identifier="showWebView" id="8jE-rZ-Lbj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZpK-cH-IIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="960" y="1822"/>
+            <point key="canvasLocation" x="518" y="1836"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Fkp-0L-rx0">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="LTN-N6-WZu" customClass="WebViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ffb-HW-ttN"/>
+                        <viewControllerLayoutGuide type="bottom" id="PQJ-M0-cla"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mTL-su-IDU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWq-r5-Nwy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rWq-r5-Nwy" firstAttribute="centerY" secondItem="mTL-su-IDU" secondAttribute="centerY" id="AME-a4-kMu"/>
+                            <constraint firstItem="rWq-r5-Nwy" firstAttribute="centerX" secondItem="mTL-su-IDU" secondAttribute="centerX" id="Hyc-ih-k6h"/>
+                            <constraint firstItem="rWq-r5-Nwy" firstAttribute="width" secondItem="mTL-su-IDU" secondAttribute="width" id="LNh-lU-jlM"/>
+                            <constraint firstItem="rWq-r5-Nwy" firstAttribute="height" secondItem="mTL-su-IDU" secondAttribute="height" id="PMT-QE-ycu"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="rWq-r5-Nwy" id="Orb-e6-YQI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKC-wR-ROx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944" y="1836"/>
         </scene>
         <!--关于-->
         <scene sceneID="SMp-7Z-gcf">
@@ -52,10 +102,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQ8-xL-3Zb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="504" y="1822"/>
+            <point key="canvasLocation" x="84" y="1836"/>
         </scene>
     </scenes>
     <resources>
         <image name="about" width="25" height="25"/>
+        <image name="logoxiaobo" width="400" height="85"/>
     </resources>
 </document>
