@@ -47,7 +47,7 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
         super.viewDidAppear(animated)
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        if userDefaults.boolForKey("showedGuide") {
+        if !userDefaults.boolForKey("showedGuide") {
             if let guidePageVC = storyboard?.instantiateViewControllerWithIdentifier("guideController")  as? GuidePageViewController {
                 presentViewController(guidePageVC, animated: true, completion: nil)
             }

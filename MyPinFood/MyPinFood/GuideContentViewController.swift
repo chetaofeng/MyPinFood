@@ -11,10 +11,10 @@ import UIKit
 class GuideContentViewController: UIViewController {
 
     @IBOutlet weak var headerLB: UILabel!
-    @IBOutlet weak var imageLB: UIImageView!
     @IBOutlet weak var footerLB: UILabel!
     @IBOutlet weak var pageCtrl: UIPageControl!
     @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var imageLB: UIImageView!
 
     var index         = 0
     var header        = ""
