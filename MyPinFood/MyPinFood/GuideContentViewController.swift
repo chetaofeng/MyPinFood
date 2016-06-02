@@ -44,9 +44,23 @@ class GuideContentViewController: UIViewController {
     @IBAction func dontBtnTapped(sender: AnyObject) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setBool(true, forKey: "showedGuide")
-        //隐藏以模态形式弹出的导航页面
-        dismissViewControllerAnimated(true) { 
+        
+        //3D Touch的添加菜单
+        if traitCollection.forceTouchCapability == .Available {
+            let bundleID = NSBundle.mainBundle().bundleIdentifier
             
+            let icon0 = UIApplicationShortcutIcon(templateImageName: "favorite")
+            let item0 = UIApplicationShortcutItem(type: "\(bundleID).openFavourite", localizedTitle: "最爱", localizedSubtitle: nil, icon: icon0, userInfo: nil)
+           
+            let icon1 = UIApplicationShortcutIcon(templateImageName: "disover")
+            let item1 = UIApplicationShortcutItem(type: "\(bundleID).openDiscover", localizedTitle: "发现", localizedSubtitle: nil, icon: icon1, userInfo: nil)
+            
+            let icon2 = UIApplicationShortcutIcon(type: .Add)
+            let item2 = UIApplicationShortcutItem(type: "\(bundleID).openAddResturant", localizedTitle: "新店", localizedSubtitle: nil, icon: icon2, userInfo: nil)
+            
+            UIApplication.sharedApplication().shortcutItems = [item0,item1,item2]
         }
+        
+        dismissViewControllerAnimated(true, completion: nil)//隐藏以模态形式弹出的导航页面
     }
 }

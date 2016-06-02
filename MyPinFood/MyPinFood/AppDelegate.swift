@@ -9,6 +9,17 @@
 import UIKit
 import CoreData
 
+enum QuickAction : String{
+    case OpenFav      = "openFavourite"
+    case OpenDiscover = "openDiscover"
+    case OpenAdd      = "openAddResturant"
+    
+    init(fullID:String){
+        let shortID = fullID.componentsSeparatedByString(".").last!
+        self.init(rawValue:shortID)!
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -103,6 +114,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    //-------------------- 3D Touch快捷操作的处理 --------------
+    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: (Bool) -> Void) {
+        completionHandler(handleQuickAction(shortcutItem))
+    }
+    func handleQuickAction(shortcutItem:UIApplicationShortcutItem) -> Bool{
+        let type = shortcutItem.type
+        let shortID = QuickAction(fullID: type)
+        
+        let tabVC = window?.rootViewController as? UITabBarController
+        
+        switch shortID {
+        case .OpenFav:
+            tabVC?.selectedIndex = 0
+        case .OpenDiscover:
+            tabVC?.selectedIndex = 2
+        case .OpenAdd:
+            let navVC = tabVC?.viewControllers?.first
+            let tableVC = navVC?.childViewControllers.first
+            tabVC?.performSegueWithIdentifier("addResturant", sender: tableVC)
+        default:
+            break
+        }
+        
+        return true
     }
 }
 

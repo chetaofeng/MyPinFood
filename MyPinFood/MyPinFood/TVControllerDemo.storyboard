@@ -43,7 +43,7 @@
         <!--Guide Page View Controller-->
         <scene sceneID="fZI-ou-RPu">
             <objects>
-                <pageViewController storyboardIdentifier="guideController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6ud-V6-PGj" customClass="GuidePageViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="guideController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6ud-V6-PGj" customClass="GuidePageViewController" customModule="MyPinFood" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uIq-ZN-tNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
