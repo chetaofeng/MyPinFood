@@ -46,8 +46,8 @@
 		CB3520A81CF595AD00814577 /* ResturantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantDetailTableViewCell.swift; sourceTree = "<group>"; };
 		CB618A721CF735490058091F /* AddResturantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddResturantTableViewController.swift; sourceTree = "<group>"; };
 		CB618A751CF88C4C0058091F /* MyFoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFoodPin.xcdatamodel; sourceTree = "<group>"; };
-		CB618A771CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResturantEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		CB618A781CF8926F0058091F /* ResturantEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResturantEntity.swift; sourceTree = "<group>"; };
+		CB618A771CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ResturantEntity+CoreDataProperties.swift"; path = "../ResturantEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CB618A781CF8926F0058091F /* ResturantEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResturantEntity.swift; path = ../ResturantEntity.swift; sourceTree = "<group>"; };
 		CB618A7B1CFEC61C0058091F /* GuideContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideContentViewController.swift; sourceTree = "<group>"; };
 		CB618A7F1CFEC8D80058091F /* GuidePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidePageViewController.swift; sourceTree = "<group>"; };
 		CB618A811CFF35740058091F /* about.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = about.storyboard; sourceTree = "<group>"; };
@@ -88,8 +88,6 @@
 		CBF5CE0E1CF0B5B3009BBE4F = {
 			isa = PBXGroup;
 			children = (
-				CB618A771CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift */,
-				CB618A781CF8926F0058091F /* ResturantEntity.swift */,
 				CBD7DCDA1CF624C4005A7C07 /* MapKit.framework */,
 				CBF5CE191CF0B5B3009BBE4F /* MyPinFood */,
 				CBF5CE181CF0B5B3009BBE4F /* Products */,
@@ -107,6 +105,8 @@
 		CBF5CE191CF0B5B3009BBE4F /* MyPinFood */ = {
 			isa = PBXGroup;
 			children = (
+				CB618A781CF8926F0058091F /* ResturantEntity.swift */,
+				CB618A771CF8926F0058091F /* ResturantEntity+CoreDataProperties.swift */,
 				CB618A8B1CFF37F20058091F /* favourite.storyboard */,
 				CBF5CE1A1CF0B5B3009BBE4F /* AppDelegate.swift */,
 				CBF5CE1C1CF0B5B3009BBE4F /* ViewController.swift */,
