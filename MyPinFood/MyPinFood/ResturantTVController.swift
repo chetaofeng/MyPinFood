@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ResturantTVController: UITableViewController,NSFetchedResultsControllerDelegate ,UISearchResultsUpdating{
+class ResturantTVController: UITableViewController,NSFetchedResultsControllerDelegate ,UISearchResultsUpdating,UIViewControllerPreviewingDelegate{
     var resturants:[ResturantEntity] = [] //用于保存餐馆列表信息
     var frc:NSFetchedResultsController! //获取CoreData 数据的代理变量
     var sc:UISearchController!
@@ -17,6 +17,11 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //注册3D Touch
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: view)
+        }
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil) //更改返回按钮样式
         
@@ -239,5 +244,31 @@ class ResturantTVController: UITableViewController,NSFetchedResultsControllerDel
             searchFun(textToSearch)
             tableView.reloadData()
         }
+    }
+    
+    //----------------  Peek 和 Pop  --------------------
+    //Peek  预览的实现
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRowAtPoint(location) else {
+                return nil
+        }
+        
+        //让预览页面周围虚化
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        previewingContext.sourceRect = (cell?.frame)!
+        
+        let storyBoard = UIStoryboard(name: "favourite", bundle: NSBundle.mainBundle())
+        guard let detailVC = storyBoard.instantiateViewControllerWithIdentifier("") as? ResturantDetailTVController else {
+            return nil
+        }
+        
+        let selectedShop = resturants[indexPath.row]
+        detailVC.resutrantEntity = selectedShop
+        
+        return detailVC
+    }
+    //Pop  展现内容的实现
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        showViewController(viewControllerToCommit, sender: self)
     }
 }
